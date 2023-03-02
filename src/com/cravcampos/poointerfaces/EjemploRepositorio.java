@@ -52,7 +52,7 @@ public class EjemploRepositorio {
         // volver a listar los clientes después de la actualización
         clientes.forEach(System.out::println);
 
-        System.out.println("===================== Editar ===============================");
+        System.out.println("===================== Eliminar ===============================");
         repo.eliminar(10);
         clientes.forEach(System.out::println);
     }
