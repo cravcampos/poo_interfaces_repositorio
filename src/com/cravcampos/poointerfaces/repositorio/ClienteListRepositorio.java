@@ -5,7 +5,7 @@ import com.cravcampos.poointerfaces.modelo.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteListRepositorio implements CrudRepositorio, OrdenableRepositorio, PaginableRepositorio {
+public class ClienteListRepositorio implements OrdenablePaginableCrudRepositorio{
 
     private List<Cliente> dataSource;
 
@@ -84,5 +84,9 @@ public static int ordenar(String campo, Cliente a, Cliente b) {
     }
 
 
+    @Override
+    public int total() {
+        return this.dataSource.size();
+    }
 }
 
