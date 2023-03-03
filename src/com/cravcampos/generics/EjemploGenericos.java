@@ -34,13 +34,18 @@ public class EjemploGenericos {
         List<ClientePremium> clientesPRemiumList = fromArrayToList(
                 new ClientePremium[]{new ClientePremium("Yohana", "Trujillo")}
         );
+
+        imprimirClientes(clientes);
+        imprimirClientes(clientesLista);
+        imprimirClientes(clientesPRemiumList);
+
     }
 
     public static <T> List<T> fromArrayToList(T[] c) {
         return Arrays.asList(c);
     }
 
-    //Forma de volver un generico que reciba un solo tipo de dato
+    //Forma de volver un genérico que reciba un solo tipo de dato
     public static <T extends Number> List<T> fromArrayToList(T[] c) {
         return Arrays.asList(c);
     }
@@ -49,10 +54,15 @@ public class EjemploGenericos {
         return Arrays.asList(c);
     }
 
+
     public static <T, G> List<T> fromArrayToList(T[] c, G[] g) {
         for (G elemento : g) {
             System.out.println(elemento);
         }
         return Arrays.asList(c);
+    }
+
+    public static void imprimirClientes(List<? extends Cliente> clientes){
+        clientes.forEach(System.out::println);
     }
 }
