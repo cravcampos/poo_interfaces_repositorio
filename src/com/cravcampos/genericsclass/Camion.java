@@ -13,7 +13,7 @@ public class Camion implements Iterable{
         this.max = max;
         this.objetos = new ArrayList();
     }
-     public void addObjeto(Object objeto){
+     public void add(Object objeto){
         if (this.objetos.size() <= this.max){
             this.objetos.add(objeto);
         }else {
