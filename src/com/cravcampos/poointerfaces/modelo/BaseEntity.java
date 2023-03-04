@@ -1,5 +1,7 @@
 package com.cravcampos.poointerfaces.modelo;
 
+import java.util.Objects;
+
 public class BaseEntity {
 
     protected Integer id;
@@ -16,5 +18,20 @@ public class BaseEntity {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BaseEntity bs = (BaseEntity) o;
+        return Objects.equals(id, bs.id);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(id);
     }
 }

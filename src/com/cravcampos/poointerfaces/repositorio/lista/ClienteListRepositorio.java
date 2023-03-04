@@ -1,6 +1,8 @@
-package com.cravcampos.poointerfaces.repositorio;
+package com.cravcampos.poointerfaces.repositorio.lista;
 
 import com.cravcampos.poointerfaces.modelo.Cliente;
+import com.cravcampos.poointerfaces.repositorio.AbstractListRepositorio;
+import com.cravcampos.poointerfaces.repositorio.Direccion;
 
 import java.util.ArrayList;
 import java.util.List;

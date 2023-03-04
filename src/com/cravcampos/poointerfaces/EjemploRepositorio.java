@@ -1,7 +1,7 @@
 package com.cravcampos.poointerfaces;
 
 import com.cravcampos.poointerfaces.modelo.Cliente;
-import com.cravcampos.poointerfaces.repositorio.ClienteListRepositorio;
+import com.cravcampos.poointerfaces.repositorio.lista.ClienteListRepositorio;
 import com.cravcampos.poointerfaces.repositorio.Direccion;
 import com.cravcampos.poointerfaces.repositorio.OrdenablePaginableCrudRepositorio;
 
