@@ -5,18 +5,7 @@ import com.cravcampos.poointerfaces.modelo.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteListRepositorio implements OrdenablePaginableCrudRepositorio{
-
-    private List<Cliente> dataSource;
-
-    public ClienteListRepositorio() {
-        this.dataSource = new ArrayList<>();
-    }
-
-    @Override
-    public List<Cliente> listar() {
-        return dataSource;
-    }
+public class ClienteListRepositorio extends AbstractListRepositorio<Cliente> {
 
     @Override
     public Cliente porId(Integer id) {
@@ -30,22 +19,12 @@ public class ClienteListRepositorio implements OrdenablePaginableCrudRepositorio
         return clienteResultado;
     }
 
-    @Override
-    public void crear(Cliente cliente) {
-        this.dataSource.add(cliente);
-    }
 
     @Override
     public void editar(Cliente cliente) {
         Cliente c = this.porId(cliente.getId());
         c.setNombre(cliente.getNombre());
         c.setApellido(cliente.getApellido());
-    }
-
-    @Override
-    public void eliminar(Integer id) {
-        Cliente c = this.porId(id);
-        this.dataSource.remove(c);
     }
 
     @Override
@@ -63,12 +42,8 @@ public class ClienteListRepositorio implements OrdenablePaginableCrudRepositorio
         return listaOrdenada;
     }
 
-    @Override
-    public List<Cliente> listar(int desde, int hasta) {
-        return dataSource.subList(desde, hasta);
-    }
 
-public static int ordenar(String campo, Cliente a, Cliente b) {
+    public static int ordenar(String campo, Cliente a, Cliente b) {
         int resultado = 0;
         switch (campo) {
             case "id":
@@ -83,10 +58,5 @@ public static int ordenar(String campo, Cliente a, Cliente b) {
         return resultado;
     }
 
-
-    @Override
-    public int total() {
-        return this.dataSource.size();
-    }
 }
 
